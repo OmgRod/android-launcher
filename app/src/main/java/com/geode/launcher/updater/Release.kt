@@ -139,7 +139,7 @@ class DownloadableLoaderRelease(private val version: LoaderVersion) : Downloadab
     override fun getDownload(): DownloadableAsset? {
         val filename = "geode-${version.tag}-${LaunchUtils.platformName}.zip"
         return DownloadableAsset(
-            url = "https://github.com/geode-sdk/geode/releases/download/${version.tag}/$filename",
+            url = "https://github.com/OmgRod/geode/releases/download/${version.tag}/$filename",
             filename = filename
         )
     }

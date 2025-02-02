@@ -28,7 +28,7 @@ class ReleaseRepository(private val httpClient: OkHttpClient) {
     }
 
     suspend fun getLatestLauncherRelease(): DownloadableLauncherRelease? {
-        val releasePath = "$GITHUB_API_BASE/repos/geode-sdk/android-launcher/releases/latest"
+        val releasePath = "$GITHUB_API_BASE/repos/OmgRod/android-launcher/releases/latest"
 
         val url = URL(releasePath)
 
@@ -36,7 +36,7 @@ class ReleaseRepository(private val httpClient: OkHttpClient) {
     }
 
     suspend fun getLatestGeodeRelease(): DownloadableGitHubLoaderRelease? {
-        val releasePath = "$GITHUB_API_BASE/repos/geode-sdk/geode/releases/latest"
+        val releasePath = "$GITHUB_API_BASE/repos/OmgRod/geode/releases/latest"
         val url = URL(releasePath)
 
         return getReleaseByUrl(url)?.let(::DownloadableGitHubLoaderRelease)
@@ -51,7 +51,7 @@ class ReleaseRepository(private val httpClient: OkHttpClient) {
 
     @OptIn(ExperimentalSerializationApi::class)
     suspend fun getLatestGeodePreRelease(): DownloadableGitHubLoaderRelease? {
-        val releasesUrl = "$GITHUB_API_BASE/repos/geode-sdk/geode/releases?per_page=2"
+        val releasesUrl = "$GITHUB_API_BASE/repos/OmgRod/geode/releases?per_page=2"
         val url = URL(releasesUrl)
 
         val request = Request.Builder()
